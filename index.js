@@ -48,11 +48,15 @@ function compare(product) {
                })
                webhook(productTitle, product.url, newSize.join())
                console.log('Size restocked: ' + newSize)
+               availableSizes1.length = 0
+               availableSizes2.length = 0
                setTimeout(() => {
                    monitor(product)
                })
            } else {
                console.log('Monitoring product: ' + productTitle)
+               availableSizes1.length = 0
+               availableSizes2.length = 0
                setTimeout(() => {
                    monitor(product)
                }, config.delay)
